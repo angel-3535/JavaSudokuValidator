@@ -23,13 +23,13 @@ public class Main {
                 for (int i: arr) {
                     values[i-1] = true;
                 }
-                for (int i = 0; i < values.length; i++) {
-                    if (!values[i]){
+                for (boolean value : values) {
+                    if (!value) {
                         validation[0] = false;
+                        break;
                     }
                 }
             }
-            System.out.println("Thread End");
         }
         );
 
@@ -40,13 +40,13 @@ public class Main {
                     values[ (sudoku[j][i] ) - 1 ]= true;
                 }
 
-                for (int z = 0; z < values.length; z++) {
-                    if (!values[z]){
+                for (boolean value : values) {
+                    if (!value) {
                         validation[0] = false;
+                        break;
                     }
                 }
             }
-            System.out.println("Thread End");
         }
         );
 
@@ -70,16 +70,16 @@ public class Main {
                     values[ (sudoku[2 + row_offset][2 + col_offset] ) - 1 ]= true;
 
 
-                    for (int z = 0; z < values.length; z++) {
-                        if (!values[z]){
+                    for (boolean value : values) {
+                        if (!value) {
                             validation[0] = false;
+                            break;
                         }
                     }
                 }
 
 
             }
-            System.out.println("Thread End");
         }
         );
 
